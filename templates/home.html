@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/trackingScript.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+
+<div class="container">
+    <a href="/trackingSuccess.html" id="clickeventtracker">Track me</a>
+</div>
+
+
+<script type="text/javascript">
+// this is where they call your api
+$("#clickeventtracker").on('click',function() {
+    var idVar = $(this.id);
+    trackingFunction(idVar);
+});
+
+</script>
+</body>
+</html>
