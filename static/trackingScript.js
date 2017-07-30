@@ -1,8 +1,8 @@
-function trackingFunction(Id){
-    alert(' Tracking function is invoked ');
-    if (Id != undefined){
+function trackingFunction(IdVar, useragentStr,cookieinfo, locationVar,eventtypeStr){
+    var dataStr='IdVar='+IdVar+'&useragentStr='+useragentStr+'&cookie='+cookieinfo+'&location='+locationVar+'&event='+eventtypeStr;
+    if (IdVar != undefined){
      $.ajax({
-        url: '/invokeClick.html',
+        url: '/invokeClick.html?'+dataStr,
         cache: false,
         type: 'POST',
         async: true,
