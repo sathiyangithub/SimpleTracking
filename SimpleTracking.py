@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, json
 
 app = Flask(__name__)
 
@@ -10,9 +10,13 @@ def hello_world():
 
 @app.route('/invokeClick.html', methods=['POST'])
 def invokeClick():
-    # this method to get cookie and url and user agent and persist same into database
-    print(' invoke click is invoked')
+    print(' IdVar ',request.args.get("IdVar"));
+    print(' useragent ',request.args.get("useragentStr"));
+    print(' cookie ', request.args.get("cookie"));
+    print(' location ', request.args.get("location"));
+    print(' event ', request.args.get("event"));
 
+    # persist this attribute info into database
 
 @app.route('/trackingSuccess.html')
 def trackingSuccess():
