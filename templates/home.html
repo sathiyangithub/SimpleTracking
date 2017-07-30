@@ -18,9 +18,11 @@
 // this is where they call your api
 $("#clickeventtracker").on('click',function() {
     var idVar = $(this.id);
-    trackingFunction(idVar);
+    document.cookie = 'username=sathiyan;emailid=sathiyan@test.com';
+    locationVar=window.location.href;
+    eventtype="onclick";
+    trackingFunction(idVar, navigator.userAgent, document.cookie,locationVar,eventtype);
 });
-
 </script>
 </body>
 </html>
